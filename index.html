@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đề xuất Google Search & AI Search 6 tháng — PCCC DHT Việt Nam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* DHT Vietnam: blue + gold · Vinalink Media: red + navy */
+      --brand: #2A6FC0;
+      --brand-dark: #1D5499;
+      --brand-soft: rgba(42, 111, 192, 0.08);
+      --gold: #B8A84E;
+      --gold-dark: #7A6C1E;
+      --vl-red: #D82828;
+      --charcoal: #1E232A;
+      --ink: #111418;
+      --navy: #203060;
+      --line: #E6E8EC;
+      --warm: #F4F8FD;
+      --muted: #6C727A;
+      --soft-bg: #F7F8FA;
+      --dark-bg: #141B2E;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      font-family: Inter, "Be Vietnam Pro", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Cover Header */
+    .cover {
+      min-height: 88vh;
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: linear-gradient(135deg, #FBFCFE 0%, #EEF3FA 100%);
+      overflow: hidden;
+    }
+    .cover:after {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,111,192, 0.12) 0%, rgba(42,111,192, 0) 70%);
+      right: -200px;
+      top: -200px;
+    }
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+      position: relative;
+    }
+    .logo-tfsvn {
+      height: auto;
+      max-height: 60px;
+      max-width: 320px;
+      object-fit: contain;
+    }
+    .logo-vl {
+      height: auto;
+      max-height: 50px;
+      max-width: 200px;
+      object-fit: contain;
+    }
+    .cover-main {
+      margin: auto 0;
+      z-index: 2;
+      position: relative;
+      padding: 50px 0;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .2em;
+      color: var(--brand);
+      text-transform: uppercase;
+    }
+    .cover h1 {
+      font-size: clamp(42px, 6vw, 84px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 20px 0;
+      color: var(--charcoal);
+      max-width: 980px;
+    }
+    .cover h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--brand), #5A9BE6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cover p {
+      font-size: 22px;
+      max-width: 860px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .cover-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .tag {
+      padding: 12px 20px;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 999px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      font-size: 14px;
+      transition: all 0.3s ease;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .tag:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .tag-primary {
+      background: var(--vl-red) !important;
+      color: #fff !important;
+      border-color: var(--vl-red) !important;
+      box-shadow: 0 8px 20px rgba(216,40,40,0.3);
+    }
+    .tag-sheet {
+      background: #9C8C34 !important;
+      color: #fff !important;
+      border-color: #9C8C34 !important;
+      box-shadow: 0 8px 20px rgba(156,140,52,0.3);
+    }
+    .cover-foot {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 2;
+      position: relative;
+      padding-top: 40px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    /* Sections */
+    .layer-section {
+      padding: 90px 0;
+    }
+    .layer-section.bg-soft {
+      background: var(--soft-bg);
+    }
+    .layer-section.bg-dark {
+      background: var(--dark-bg);
+      color: rgba(255,255,255,0.82);
+    }
+    .section-head {
+      margin-bottom: 44px;
+    }
+    .kicker {
+      font-size: 13px;
+      letter-spacing: .2em;
+      color: var(--brand);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(42,111,192,0.08);
+      border-radius: 8px;
+    }
+    .layer-section.bg-dark .kicker {
+      background: rgba(42,111,192,0.22);
+      color: #8EC0F5;
+    }
+    .section-head h2 {
+      font-size: clamp(34px, 4.5vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -.03em;
+      margin: 0;
+      color: var(--charcoal);
+    }
+    .layer-section.bg-dark .section-head h2 {
+      color: #fff;
+    }
+
+    h1, h2, h3, h4 { letter-spacing: -.02em; }
+    h1 { font-size: 36px; color: var(--charcoal); margin-top: 40px; }
+    h2 { font-size: 30px; color: var(--charcoal); margin-top: 36px; }
+    .layer-section.bg-dark h2 { color: #fff; }
+    h3 { font-size: 22px; color: var(--navy); margin: 28px 0 12px; }
+    .layer-section.bg-dark h3 { color: #E3D58A; }
+    h4 { font-size: 18px; color: var(--charcoal); margin: 16px 0 8px; font-weight: 800; }
+    .layer-section.bg-dark h4 { color: #fff; }
+    p { margin: 12px 0 20px; font-size: 17px; }
+    ul, ol { padding-left: 24px; font-size: 17px; margin-bottom: 24px; }
+    li { margin: 8px 0; }
+
+    /* Quotes & Highlight Cards */
+    .quote-card {
+      margin: 32px 0;
+      padding: 32px 40px;
+      border-left: 5px solid var(--brand);
+      background: var(--warm);
+      border-radius: 0 24px 24px 0;
+      font-size: 21px;
+      color: var(--charcoal);
+      line-height: 1.55;
+      box-shadow: 0 10px 30px rgba(42,111,192,0.05);
+      position: relative;
+    }
+    .quote-card:before {
+      content: '"';
+      position: absolute;
+      font-size: 120px;
+      color: rgba(42,111,192,0.08);
+      top: -20px;
+      left: 20px;
+      font-family: serif;
+      line-height: 1;
+    }
+    .layer-section.bg-dark .quote-card {
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      border-left-color: var(--brand);
+    }
+
+    /* Analysis Image Card */
+    .analysis-img-card {
+      margin: 32px 0;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 15px 40px rgba(0,0,0,.06);
+      transition: all .3s ease;
+    }
+    .analysis-img-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px rgba(0,0,0,.1);
+    }
+    .analysis-img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .analysis-img-caption {
+      padding: 18px 24px;
+      background: #F6F9FD;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Bento Grids */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .bento-grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .bento-card {
+      padding: 32px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bento-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .layer-section.bg-dark .bento-card {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+    }
+    .layer-section.bg-dark .bento-card:hover {
+      background: rgba(255,255,255,0.06);
+    }
+    .bento-card.danger {
+      border-top: 4px solid #D82828;
+    }
+    .layer-section.bg-dark .bento-card.danger {
+      border-top: 4px solid #FF5A5A;
+    }
+    .bento-card.success {
+      border-top: 4px solid #9C8C34;
+    }
+
+    /* Journey Steps */
+    .journey-wrap {
+      position: relative;
+      margin: 50px 0;
+      padding: 40px;
+      background: var(--charcoal);
+      border-radius: 32px;
+      overflow: hidden;
+    }
+    .journey-wrap:before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle, rgba(42,111,192,0.15) 0%, transparent 70%);
+      z-index: 1;
+    }
+    .journey {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      gap: 12px;
+    }
+    .journey-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 24px 16px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .journey-step:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-4px);
+    }
+    .journey-step b {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      background: var(--brand);
+      color: #fff;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 0 20px rgba(42,111,192,0.4);
+    }
+    .journey-step span {
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      display: block;
+      line-height: 1.4;
+    }
+    .journey-arrow {
+      color: rgba(255,255,255,0.3);
+      font-size: 24px;
+    }
+
+    /* Roadmap Steps */
+    .roadmap .bento-card {
+      border-top: 6px solid var(--brand);
+    }
+    .roadmap small {
+      display: block;
+      color: var(--brand);
+      font-weight: 900;
+      letter-spacing: .12em;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+    .roadmap b {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--charcoal);
+    }
+    .layer-section.bg-dark .roadmap b {
+      color: #fff;
+    }
+    .roadmap span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .layer-section.bg-dark .roadmap span {
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Metrics Grid */
+    .metric-grid b {
+      display: block;
+      font-size: 46px;
+      color: var(--brand);
+      line-height: 1;
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+    .metric-grid span {
+      display: block;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--charcoal);
+    }
+    .layer-section.bg-dark .metric-grid span {
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* Measure Stair */
+    .measure-stair {
+      display: grid;
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .measure-stair div {
+      padding: 24px 32px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--brand);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      transition: transform 0.3s ease;
+    }
+    .measure-stair div:hover {
+      transform: translateX(8px);
+    }
+    .measure-stair span {
+      font-size: 12px;
+      letter-spacing: .15em;
+      color: var(--brand-dark);
+      font-weight: 900;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      width: 90px;
+    }
+    .measure-stair b {
+      font-size: 19px;
+      color: var(--charcoal);
+    }
+
+    /* Data Excel Buttons */
+    .btn-data-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: linear-gradient(135deg, #9C8C34 0%, #6F621C 100%);
+      color: #fff;
+      padding: 24px 32px;
+      border-radius: 24px;
+      margin: 24px 0;
+      box-shadow: 0 15px 35px rgba(156,140,52,.22);
+      transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+    .btn-data-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px rgba(156,140,52,.32);
+    }
+    .btn-data-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .btn-data-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      backdrop-filter: blur(5px);
+    }
+    .btn-data-icon svg { width: 32px; height: 32px; fill: #fff; }
+    .btn-data-text h4 { margin: 0 0 4px; font-size: 18px; font-weight: 800; color: #fff; }
+    .btn-data-text p { margin: 0; font-size: 15px; color: rgba(255,255,255,.88); }
+    .btn-data-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: #9C8C34;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+    .btn-data-action:hover {
+      background: #FBF8E8;
+      transform: scale(1.04);
+    }
+
+    /* Offer & Budget Card */
+    .offer-card {
+      margin: 60px 0;
+      padding: 60px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, var(--navy), #121C3D);
+      color: #fff;
+      box-shadow: 0 30px 60px rgba(32,48,96,0.25);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .offer-card:after {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(42,111,192,0.25) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      border-radius: 50%;
+    }
+    .offer-kicker {
+      color: #E3D58A;
+      font-weight: 900;
+      letter-spacing: .2em;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .offer-title {
+      font-size: 46px;
+      font-weight: 900;
+      margin: 0 0 24px;
+      line-height: 1.1;
+    }
+    .offer-price {
+      font-size: 38px;
+      font-weight: 900;
+      color: #fff;
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--vl-red);
+      border-radius: 100px;
+      box-shadow: 0 10px 30px rgba(216,40,40,0.4);
+    }
+
+    /* Tables */
+    .table-scroll {
+      overflow-x: auto;
+      margin: 32px 0;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 720px;
+      background: #fff;
+    }
+    th {
+      background: #EEF3FA;
+      color: var(--charcoal);
+      text-align: left;
+      padding: 18px 24px;
+      font-weight: 800;
+      border-bottom: 2px solid var(--line);
+    }
+    td {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 16px;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #F6F9FD; }
+    td strong { color: var(--charcoal); }
+
+    /* Footer */
+    .footer {
+      padding: 60px 0;
+      background: var(--ink);
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer strong {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .bento-grid { grid-template-columns: 1fr 1fr; }
+      .journey { flex-wrap: wrap; }
+      .journey-step { flex: 1 1 45%; }
+      .journey-arrow { display: none; }
+    }
+    @media(max-width: 700px) {
+      .layer-section { padding: 60px 0; }
+      .cover { min-height: auto; padding: 40px 0 60px; }
+      .cover h1 { font-size: 38px; }
+      .logo-tfsvn { max-height: 45px; }
+      .logo-vl { max-height: 40px; }
+      .bento-grid, .bento-grid-4 { grid-template-columns: 1fr; }
+      .journey-step { flex: 1 1 100%; }
+      .offer-card { padding: 40px 24px; }
+      .offer-title { font-size: 30px; }
+      .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+    }
+    /* PCCC DHT additions */
+    .wordmark { display: flex; align-items: center; gap: 12px; font-weight: 900; color: var(--charcoal); letter-spacing: -.01em; font-size: 20px; line-height: 1.1; }
+    .wordmark i { font-style: normal; display: inline-flex; width: 46px; height: 46px; border-radius: 12px; background: var(--brand); color: #fff; align-items: center; justify-content: center; font-size: 15px; letter-spacing: .02em; box-shadow: 0 8px 20px rgba(42,111,192,.3); }
+    .wordmark small { display: block; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .08em; }
+    .bar-card { margin: 40px 0; padding: 32px 36px; border-radius: 24px; background: #fff; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+    .bar-card h4 { margin-top: 0; }
+    .bar-row { display: grid; grid-template-columns: 190px 1fr 150px; align-items: center; gap: 16px; margin: 14px 0; font-size: 15px; }
+    .bar-row .name { font-weight: 800; color: var(--charcoal); }
+    .bar-track { height: 18px; background: #E9EEF5; border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; background: var(--navy); border-radius: 999px; min-width: 4px; }
+    .bar-row.me .bar-fill { background: var(--brand); }
+    .bar-row.me .name { color: var(--brand); }
+    .bar-row .val { font-weight: 700; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+    .bar-note { font-size: 14px; color: var(--muted); margin: 18px 0 0; }
+    .tbd { background: #FFF3C4; color: #7A5A00; padding: 0 6px; border-radius: 6px; }
+    .offer-price .tbd { background: transparent; color: #fff; padding: 0; }
+    @media(max-width: 700px) {
+      .bar-row { grid-template-columns: 1fr; gap: 6px; }
+      .bar-row .val { text-align: left; }
+      .wordmark { font-size: 16px; }
+    }
+      .bento-card.success { border-top-color: var(--gold); }
+    .bento-card.success h4 { color: var(--navy); }
+    .cover:before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: linear-gradient(90deg, var(--brand) 0 50%, var(--gold) 50% 75%, var(--vl-red) 75% 100%); z-index: 3; }
+    .eyebrow { color: var(--brand); }
+    .quote-card { border-left-color: var(--gold) !important; }
+    .layer-section.bg-dark .quote-card { background: rgba(255,255,255,0.04); }
+    .logo-dht { height: 60px; width: auto; display: block; padding: 6px 10px; background: #fff; border-radius: 12px; box-shadow: 0 6px 18px rgba(32,48,96,.08); }
+    .measure-stair div { border-left-color: var(--brand); }
+    .offer-card:after { background: radial-gradient(circle, rgba(184,168,78,0.28) 0%, transparent 70%); }
+    @media(max-width: 700px) { .logo-dht { height: 46px; } }
+  </style>
+</head>
+<body>
+
+<!-- Cover Section -->
+<section class="cover">
+  <div class="shell">
+    <div class="brand-row">
+      <img class="logo-dht" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD//gA8Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAKAP/bAEMAAgEBAgEBAgICAgICAgIDBQMDAwMDBgQEAwUHBgcHBwYHBwgJCwkICAoIBwcKDQoKCwwMDAwHCQ4PDQwOCwwMDP/bAEMBAgICAwMDBgMDBgwIBwgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDP/AABEIADAAaQMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP37HK1Fcy7IXP8AdqVPu02b7nTrQB8H/Ev/AILg+G/hl491Xw/eeAfGH2nSp2t5BcGK3kODgN5bEkAjn6YPQiqw/wCC7nhWxFrLqnw+8bWFlfLvt7nETrKPVAWRW6H7pNfI/wDwWMkVv28PEwXaPLtrIHHT/j2TBI7n5h1PIAr7W+MPwh0f4if8EirH7dbwvNo/gu11O2kI+a3mhtlkVgeCCQCpGcNkj3r9WxGQ5PhsHgq9WnL9/a/vbX7H5dh86zSvicTRp1F+5v07Hv8A+zf+1/4K/ar8LTaj4R1T7ZLagLdWcyeTc2bN0WRew9GGQcHnivn743f8FsPA/wAGviFqnh2Hwv4o1e80e6ktLmULHbRsyMVJUSNuYZBwdoB6jIr4f/4JIeP9Q8F/tueFbezkZbXxAk+n3UQ4WVPKeRWPurRrg89G9TXVf8FtNIhsf2yopIY1U32gWssrBR87B5lzwBzgDn2rXD8B4KnxGsrrNyhKPNHWz+YsRxhjJZMsbBqMlLlemh9rQf8ABXDwfJ+zf/wsqTwx4vi04an/AGT9n8hCxl27twk37PLxxuLA54xniuZ+CX/BbTwn8YPijovhceDvFGn3Gu3cVjbyq0VwsbyMFBdVIKqpYZIBwMnoCa+VZP8AgonZz/sDt8KR4AvlJ0hdLOqiYG13hv8AX7dmeWO773XvUP8AwRF06G//AGzXeSNWaDQbuSF/7jb4V4684ZgD1wTUf6mYOnluNxmIpteyk1H3vu2uZ/604ypjcPQpVk1USb938j7N/aR/4LC+Bf2c/i9eeEZtG1rXrnTRtvrixeIJBKQD5Q3MNxAI9gcjOQa45f8Agvn8N1HPhHxwuejGO1/+PV1l1/wTG8C/Djxp8S/iRrE114nvdYg1C9gt7+JPJ04zB3kK8cvyQHPQYIGea/Nf9gTQrPxX+2N4AsdQtobyxuNUAlhmQOki7HOGB47UZDkOQ43B1q0YTl7GKcrytd2u7G2cZxneExNOk5L33ZadD9Vv2Mf+CmHhT9snxLq2jabpupaLq+mxi5FremNmuYNwBkQqSPkLKCM9xX07G3yV8r/s9/8ABMXwr+z1+01qnxE0PU7+KG+ilW10gRKlvYmUqzhWByV4+VT93PfAr6oQArX53m/1F4jmy+/Jbrvfqfd5PLGfV/8Abbc3l2HiigUV5Z6o1X4qHULtbWzklbLLGMnAzVObxRYxXgtmu7dbhhxGXG4/QVHd+JrGCf7PNcQxysMBGkCs2TgcH17etc6xdG9uZaeZTpztouh+Ef7fPxg0z9oD9rHxd4s0RLhdNvnhigM8XlSFYYEhLbe25kJGcEAgHkGvor4k/wDBUnQNV/YI0v4Z+HdP1ZvEl5odvoV3LIgWG3RUVJWRgxLllDY4XGe1fp4bTw7ZXjI0elwXUxyUYIJHOeRjqevSpBp3h+0uTILfS4Z8/fMaK4Puex9q++xHH2CrYfDUqlJWw9rPm7d9D4GjwfjKdatUp1f4l76dz81/+CQX7DPiLTvibD8UPFml3ekafpcLjSLe6iMU99NImwy7DyERcjpyxBGQOfA/+CpPxus/jp+1zrV5Z291a2+hRR6Iv2uLy5HaF5NzbT0Vi549q/a6DVdPlidYbi3kEPMiq4fYMZweeB7cCsnU9D8I67cC8vLPQbybHEssUUjhcZB3Edhk85+tZ4TxKpxzZ5tiVGTatFc1kl/wDTFcEuWXLAUJcut22r6n506p+1Rpdp/wRvtNNXR9SgvbxP8AhE1zbEQtIMO0wfptMWef73y9Oa8T/wCCRXxUtPhV+2NpP223vrhfEltJo0P2aDztksrRlGYf88wUPzD1r9jru10H+w1t7hbL+zpV2LHJtMLrn5QF+6Q3UADBqPTPC3hvwkPtVrp+k6au1czQwRwlh25A9SO5oo8eYaGBxOB5F+9bbfNtfb5BPg+tLFUMTKol7NJJW3seP/8ABQr9pKz/AGeP2bNaurqx1K+bXLSfSrUWsO5IJpIHAeVjxHGvXrmvxz/Zj+LcPwK/aB8JeLbm1mvLfQ9RS4khh4klTBDbM8FsE8Hiv6ABa2OraeW2x3NvMOeAyOO/sehFY+k+APCH27dZ6ToK3Vs3JgtY1khb3IAI+hFY8N8Y0MswdbCypqbrJp6/dY6M84ZrY/E08QqllTND4e+LY/Hfg3S9YghubeHVrOK8jjuIfKlRZFBAdeqtjqO1bwODWfNqtno5VZp4oQzYXzHC5Pt+ePwqS61qC1tzJI6RxgbizHAA9zXxsq9JSaTS3dr/AJn11OnJRSe5fU5par6bqUOqW/nQSJNGeA6Hcp+hqxWkZKS5kU1Z2Z8Tfty/CmP4c/EPT/FllarJZahNuuY5GLxmdW3nJJPyuCRjjGw4rrvhB4c0/wDaf+Nt144uNNX+xtFtYrWzSZc+fcgZZiMgHZnj6rXunxs+Etr8YvAd7ol0zQ/atrxzBdzQSLyGA/AD8TUvwh+E1l8H/AtloljukS1T55W4aaQnLOR6kk/kK/OafCteOcSrJ/uH71r/AGj1HjofVuS3vbHyr8YPh/p4/bq0zTzbqbXVLi1uLmIE4cnOcnPQ4HpVX46eEtL8P/tj28Y0FtXtbuNLiXT7dQzXUpjc8gkA8rnnFezeM/2Pbrxj8aP+EwHiy+s50njmhRLJC0AT7qK2cYGO6855zU3jL9j658VfFc+L08WX1nqcbq9uUs4n+zhVwoGcZx7+tfP4rhfHtVJQg7urzb/ZOqjjaK5eb+W3zOa+EvwGsfiB8Hb6406RvCmoeNLVY7m1jXzIYEilYApGxyAy5VucDIwBXj+o/A7R7D9rK38DRrctpP7uCTdI252NvvLZz13c46dulfVPw5+A994R+Id94h1bxJfeIL26tPsUSywLClvHuDttCnGWYDtXE6h+xTfXnxfXxe3jO+W+W6F0GFhH5i4GAM7tv3fl+7XoZlw/WrUaDhSfMpWeu68zHD4qFOUuaenTQ4f9pf8AZ+t/hR+zNplnLePq11pGpeXZ3Dp5QWOXdmMKSw28Lk5JOOMV5f4j+KniDw/8PdQ+H/jLTri68hUksDdHE1i6k7WDHO9ChIXrjPfO0fX37RXwAuPjxoVnp661No8FrP8AaJBHbLJ57ADZnlSMc9D/ABVX+KP7LmmfF3wBZWOsXMk2qWEKJHqnkgTM4HLMvQgnnGeO1c+b8JY+tiqk8vk4JKKS6SXU2wuOoxio11d3vfqvQPCetaX8Ev2YtMvvL8mzsdIiutgY5ldkD4ySSdztXyx8G/iJcfB/4+2Ooza1Z39nrzI+ptaTF44/POWDcnDRvj/vj3NfTXxW/ZpvPiR4a0HRYfEU2m6ToscSva/ZBKl20YAV2JIPAA4ORWJ8YP2INO+Jl7p8mn3lr4fSzjKPHa6XGFnfOS52lckn1rqzrKM4rSpSw6t7Dlt59zHDYihFTVR/EYf/AAUI8JL4k8PeGZrW1+1atNfCxg2nmQOpITB4+8Ac/hXiPjT4+a94/wDgXpvhmS3vPJ0Vx/aN1yyzxhtsKNyCMHAbnnYPevqLxV+zNrHiix8IxTeLrppfCswuBNJYI7XMi/cb7wwQvy87vXrVbx1+xfpviHw5rVhpeoyaP/b2orqF2/2cTbsc+WOVIXdluveuHO+Hc1xlepiaLceZJNen/BNMLjKFOKjNbG9+xPo9ro/7PWh/ZVVftMRnlI/icswOfyxjpXrNcX8BfhdJ8HPh3a6DJqL6otmWEUrQiHCEk7doJHBJ5967Sv07I6M6WApUqm6VmeTiJKVRyjsf/9k=" alt="PCCC DHT Việt Nam">
+      <img class="logo-vl" src="https://vinalink.vn/uploaded/logo/logo.png" alt="Vinalink Media">
+    </div>
+    <div class="cover-main">
+      <div class="eyebrow">GOOGLE SEARCH & AI SEARCH · KẾ HOẠCH 6 THÁNG</div>
+      <h1>248 TRANG, 61 LƯỢT TRUY CẬP MỖI THÁNG. <em>ĐÃ ĐẾN LÚC GOM LẠI.</em></h1>
+      <p>Website DHT không thiếu bài. Bài đang nằm rải ở quá nhiều trang “giá rẻ tại [tỉnh]”, trong khi 4 đối thủ chia nhau khoảng 23.600 lượt truy cập tự nhiên mỗi tháng ở những nhóm sản phẩm DHT cũng bán.</p>
+      <div class="cover-tags">
+        <div class="tag">Mục tiêu định hướng: 3.000 lượt/tháng</div>
+        <div class="tag">6 nhóm nhu cầu</div>
+        <div class="tag">Google AI Overview · Gemini · ChatGPT</div>
+        <div class="tag tag-primary">Mức đầu tư: 30 triệu / tháng (6 tháng)</div>
+        <a href="https://docs.google.com/spreadsheets/d/179r-RdOMvxJZMJwB9CXuXJWHP1YLZoEn/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="tag tag-sheet">📊 Google Sheet: bản đồ cơ hội đối thủ</a>
+      </div>
+    </div>
+    <div class="cover-foot">
+      <span>PCCC DHT VIỆT NAM (pcccdhtvietnam.vn)</span>
+      <span>Vinalink Media đề xuất · 20/10/2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- Executive Summary -->
+<section class="layer-section">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">TÓM TẮT</div>
+      <h2>Nếu chỉ có 30 giây để đọc</h2>
+    </section>
+    <h2>Người mua đi từ một yêu cầu PCCC đến cuộc gọi báo giá. DHT cần có mặt ở từng bước.</h2>
+    <p>Website hiện có 248 URL, nhưng chỉ 17 URL có traffic. Viết thêm một trang “bán … giá rẻ tại [tỉnh]” nữa sẽ không đổi được con số này.</p>
+    <p>Kế hoạch 6 tháng đi theo đường mà một chủ cơ sở hay một doanh nghiệp thường đi khi phải trang bị PCCC:</p>
+
+    <blockquote class="quote-card">
+      Bị yêu cầu về PCCC (kiểm tra, nghiệm thu, Nghị định 105) → tra quy định → chọn thiết bị → so giá, tìm chỗ mua → thi công, nạp bình, bảo trì → gọi DHT báo giá.
+    </blockquote>
+
+    <div class="journey-wrap">
+      <div class="journey">
+        <div class="journey-step"><b>01</b><span>Bị yêu cầu về PCCC</span></div><div class="journey-arrow">→</div>
+        <div class="journey-step"><b>02</b><span>Tra quy định</span></div><div class="journey-arrow">→</div>
+        <div class="journey-step"><b>03</b><span>Chọn thiết bị</span></div><div class="journey-arrow">→</div>
+        <div class="journey-step"><b>04</b><span>So giá, tìm chỗ mua</span></div><div class="journey-arrow">→</div>
+        <div class="journey-step"><b>05</b><span>Thi công · nạp · bảo trì</span></div><div class="journey-arrow">→</div>
+        <div class="journey-step"><b>06</b><span>Gọi DHT báo giá</span></div>
+      </div>
+    </div>
+
+    <!-- Figure 1: Traffic comparison -->
+    <div class="bar-card">
+      <h4>Hình 1: Lượt truy cập tự nhiên ước tính mỗi tháng — DHT và 4 đối thủ (số liệu chụp ngày 19/10/2026)</h4>
+      <div class="bar-row"><span class="name">baohovietnam.com</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="val">18.828 · 755 URL</span></div>
+      <div class="bar-row"><span class="name">thietbipcccvn.com</span><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div><span class="val">3.017 · 239 URL</span></div>
+      <div class="bar-row"><span class="name">pcccphucbaoan.com</span><div class="bar-track"><div class="bar-fill" style="width:6.8%"></div></div><span class="val">1.284 · 88 URL</span></div>
+      <div class="bar-row"><span class="name">pccchanoi.com.vn</span><div class="bar-track"><div class="bar-fill" style="width:2.6%"></div></div><span class="val">483 · 105 URL</span></div>
+      <div class="bar-row me"><span class="name">pcccdhtvietnam.vn</span><div class="bar-track"><div class="bar-fill" style="width:0.3%"></div></div><span class="val">61 · 248 URL</span></div>
+      <p class="bar-note">Nguồn: file xuất Organic Pages, đã chuẩn hóa và bỏ URL trùng. Đây là số ước tính của công cụ, chưa phải số GA4. Khoảng 6.900 lượt của baohovietnam.com đến từ đồ bảo hộ lao động, không thuộc lõi PCCC.</p>
+    </div>
+
+    <p>Sáu tháng tập trung vào ba việc:</p>
+    <ul>
+      <li><strong>Dọn và gom lại.</strong> Khoảng 42 URL có số điện thoại trong đường dẫn, 34 URL bị trùng bản www/không www và nhiều trang “giá rẻ tại [tỉnh]” cùng nói một chuyện sẽ được gộp về trang chính.</li>
+      <li><strong>Mỗi nhu cầu một trang đủ mạnh.</strong> Bình chữa cháy, báo cháy, đèn exit và thiết bị PCCC, tiêu lệnh – nội quy, vòi/lăng; thêm các trang dịch vụ nạp bình, bảo trì, thi công.</li>
+      <li><strong>Viết để AI trích được.</strong> Bài pháp lý và bài hướng dẫn được viết thành câu trả lời rõ ràng, để Google AI Overview, Gemini, ChatGPT có thể lấy DHT làm nguồn.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Section 1 -->
+<section class="layer-section bg-soft">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">01 · CƠ HỘI ĐANG LỌT Ở ĐÂU</div>
+      <h2>1. Bài thì có. Chỉ là khách tìm không thấy.</h2>
+    </section>
+    <p>Trong 248 URL của pcccdhtvietnam.vn, có 231 URL (93%) không có traffic ước tính. Cả website nhận khoảng 61 lượt mỗi tháng.</p>
+    <p>Đặt cạnh thietbipcccvn.com sẽ thấy rõ hơn: số trang gần như bằng nhau (239 URL), nhưng họ nhận khoảng 3.017 lượt, gấp chừng 49 lần. pcccphucbaoan.com chỉ có 88 URL mà nhận 1.284 lượt.</p>
+
+    <div class="bento-grid bento-grid-4 metric-grid">
+      <div class="bento-card"><b>248</b><span>URL trên pcccdhtvietnam.vn</span></div>
+      <div class="bento-card"><b>93%</b><span>URL không có traffic ước tính (231/248)</span></div>
+      <div class="bento-card"><b>0,25</b><span>lượt/URL của DHT. thietbipcccvn: 12,6 · phucbaoan: 14,6</span></div>
+      <div class="bento-card"><b>~23.600</b><span>lượt/tháng 4 đối thủ đang chia nhau</span></div>
+    </div>
+
+    <a href="https://docs.google.com/spreadsheets/d/179r-RdOMvxJZMJwB9CXuXJWHP1YLZoEn/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-data-box">
+      <div class="btn-data-info">
+        <div class="btn-data-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+        </div>
+        <div class="btn-data-text">
+          <h4>Google Sheet: Bản đồ cơ hội đối thủ — PCCC DHT</h4>
+          <p>1.435 URL đã làm sạch · 9 nhóm chủ đề · 311 URL cơ hội xếp P1–P3 · đối chiếu cả 248 URL của DHT</p>
+        </div>
+      </div>
+      <div class="btn-data-action">
+        <span>Mở Google Sheet</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </div>
+    </a>
+
+    <div class="bento-grid">
+      <div class="bento-card danger">
+        <h3>Nhu cầu nằm ở sản phẩm. Trang của DHT lại chia theo tỉnh.</h3>
+        <p>Nhóm bình chữa cháy mang về khoảng 5.026 lượt cho đối thủ. DHT có 61 URL về bình chữa cháy, cộng lại được khoảng 4 lượt. Phần lớn là các trang “bán bình chữa cháy giá rẻ tại Hà Nội / Hà Nam / Thanh Hóa…”.</p>
+        <p>Các trang này cùng nhắm một nhu cầu nên tự giành chỗ của nhau, và chưa trang nào đủ mạnh để lên top.</p>
+      </div>
+      <div class="bento-card danger">
+        <h3>Một trang, nhiều địa chỉ</h3>
+        <p>Khoảng 42 URL có số điện thoại trong đường dẫn (lh0961889114, lh0968692585). 34 URL có bản www chạy song song bản không www. Có trang đuôi .html, có trang đuôi “/”.</p>
+        <p>Google phải chọn giữa nhiều phiên bản của cùng một trang, sức mạnh bị chia ra, và số liệu đo cũng bị chia theo.</p>
+      </div>
+      <div class="bento-card danger">
+        <h3>Khi khách hỏi AI, câu trả lời đang trích đối thủ</h3>
+        <p>Theo file xuất, baohovietnam.com có 51 URL xuất hiện trên các công cụ trả lời bằng AI (Google AI, Gemini, SearchGPT). pcccphucbaoan.com có 18, thietbipcccvn.com có 16. DHT có 3.</p>
+        <p>Một người hỏi AI “doanh nghiệp cần trang bị PCCC gì theo Nghị định 105” nhiều khả năng sẽ được dẫn sang trang của đối thủ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2 -->
+<section class="layer-section">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">02 · VÌ SAO CHƯA LẤY ĐƯỢC</div>
+      <h2>2. Cách làm cũ đang kéo website đi sai hướng</h2>
+    </section>
+    <p>Lâu nay website lớn lên bằng cách nhân bản trang theo từng địa phương. Số trang tăng đều, nhưng traffic thì không theo.</p>
+
+    <div class="bento-grid">
+      <div class="bento-card">
+        <h4>1. Nhiều trang dồn vào chỗ ít người tìm</h4>
+        <p>DHT có 75 URL về thi công/bảo trì và nạp/kiểm định. Ở hai nhóm này, cả 4 đối thủ cộng lại chỉ khoảng 97 lượt. Trong khi bình chữa cháy, thiết bị PCCC, pháp lý và báo cháy — khoảng 9.000 lượt của đối thủ — DHT chưa có trang chủ lực nào.</p>
+      </div>
+      <div class="bento-card">
+        <h4>2. Cùng một sản phẩm, viết lại cho từng tỉnh</h4>
+        <p>62 URL có chữ “Hà Nội”, 17 “Hưng Yên”, 14 “Hà Nam”, 14 “Bắc Ninh”. Cùng một món hàng, nội dung na ná nhau. Kiểu trang này dễ bị Google xem là trang mỏng hơn là trang địa phương có ích.</p>
+      </div>
+      <div class="bento-card">
+        <h4>3. Thiếu bài pháp lý và bài hướng dẫn</h4>
+        <p>pcccphucbaoan.com lấy khoảng 1.163 lượt chỉ từ tiêu lệnh, nội quy, Nghị định 105/2025 và kiến thức PCCC. DHT có 27 URL ở hai nhóm này, gần như chưa có traffic.</p>
+      </div>
+      <div class="bento-card">
+        <h4>4. Chưa biết trang nào ra cuộc gọi</h4>
+        <p>Chưa có số GA4/GSC chuẩn để biết trang nào đem về cuộc gọi, tin Zalo hay form báo giá. Nên hiện giờ chọn viết gì vẫn phần lớn dựa vào cảm giác.</p>
+      </div>
+    </div>
+
+    <blockquote class="quote-card">
+      Nói gọn: thêm bài chưa giải quyết được chuyện này. Việc cần làm là nối lại đường đi của khách: có nhu cầu PCCC → vào đúng trang sản phẩm hoặc dịch vụ → thấy kiểm định, giấy tờ pháp lý đầy đủ → gọi, nhắn Zalo hoặc gửi form cho DHT.
+    </blockquote>
+  </div>
+</section>
+
+<!-- Section 3 -->
+<section class="layer-section bg-dark">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">03 · ĐỐI THỦ ĐANG THẮNG Ở ĐÂU</div>
+      <h2>3. Mỗi đối thủ giữ một nhóm nhu cầu, bằng một trang làm tới nơi</h2>
+    </section>
+    <p>Dữ liệu lấy từ Google Sheet bản đồ cơ hội (PCCC_DHT_Competitor_Opportunity_Map_20261020), so DHT với 4 website: baohovietnam.com, thietbipcccvn.com, pcccphucbaoan.com, pccchanoi.com.vn. Ở hầu hết các nhóm, DHT đều đã có trang. Cái thiếu là một trang đủ sức đứng ra cạnh tranh.</p>
+
+    <a href="https://docs.google.com/spreadsheets/d/179r-RdOMvxJZMJwB9CXuXJWHP1YLZoEn/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-data-box" style="background: linear-gradient(135deg, #9C8C34 0%, #5E5318 100%); margin: 24px 0 36px;">
+      <div class="btn-data-info">
+        <div class="btn-data-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+        </div>
+        <div class="btn-data-text">
+          <h4>Bảng chi tiết: cơ hội theo chủ đề và theo từng URL</h4>
+          <p>Tab 02_Co_hoi_chu_de · 03_Co_hoi_URL · 05_Mapping_URL_minh</p>
+        </div>
+      </div>
+      <div class="btn-data-action">
+        <span>Mở Google Sheet</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </div>
+    </a>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Nhóm nhu cầu</th>
+            <th>Ai đang thắng</th>
+            <th>Traffic đối thủ & trang dẫn đầu</th>
+            <th>DHT đang có gì</th>
+            <th>Nên làm gì</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bình chữa cháy / bình cứu hỏa</strong> <br>P1</td>
+            <td><strong>baohovietnam, thietbipcccvn</strong></td>
+            <td>Cả nhóm 5.026 lượt. baohovietnam /binh-cuu-hoa (3.271 lượt · 72 từ khóa), thietbipcccvn /binh-chua-chay (1.327 · 78 từ khóa), /binh-chua-chay-bot (227)</td>
+            <td>61 URL, tổng khoảng 4 lượt. Trang chia theo tỉnh; bài MT3/MT5 chưa có traffic.</td>
+            <td>Làm một trang danh mục “Bình chữa cháy” và các trang con theo loại (bột, CO2, foam, MT3/MT5/MFZ4…). Gộp các trang “giá rẻ tại [tỉnh]” về đây.</td>
+          </tr>
+          <tr>
+            <td><strong>Thiết bị / phụ kiện PCCC</strong> <br>P1</td>
+            <td><strong>baohovietnam</strong></td>
+            <td>Cả nhóm 2.076 lượt. Đèn exit (554), mặt nạ phòng độc (508), thiết bị PCCC (344), phao cứu hộ (211)</td>
+            <td>19 URL, khoảng 1 lượt. Chưa có trang riêng cho đèn exit, đèn sự cố.</td>
+            <td>Làm trang tổng “Thiết bị PCCC”, rồi trang riêng cho đèn exit – đèn sự cố, mặt nạ phòng độc, thiết bị thoát hiểm.</td>
+          </tr>
+          <tr>
+            <td><strong>Pháp lý / tiêu lệnh / nội quy</strong> <br>P1</td>
+            <td><strong>pcccphucbaoan</strong></td>
+            <td>Cả nhóm 975 lượt. Tiêu lệnh PCCC (291), Nghị định 105/2025 (202), nội quy PCCC (196). Cả ba đều được hỏi nhiều trên AI</td>
+            <td>11 URL, khoảng 1 lượt. Phần lớn là trang bán bộ tiêu lệnh theo tỉnh.</td>
+            <td>Làm cụm “Pháp lý PCCC cho doanh nghiệp”: Nghị định 105/2025 yêu cầu gì, mẫu tiêu lệnh và nội quy, danh sách việc cần kiểm. Từ đó dẫn sang sản phẩm và dịch vụ.</td>
+          </tr>
+          <tr>
+            <td><strong>Báo cháy / đầu báo</strong> <br>P1</td>
+            <td><strong>thietbipcccvn, baohovietnam</strong></td>
+            <td>Cả nhóm 884 lượt. Đầu báo khói (462 · 50 từ khóa), đèn báo cháy (290)</td>
+            <td>8 URL, chưa có lượt nào.</td>
+            <td>Làm trang chính cho đầu báo khói, báo nhiệt và hệ thống báo cháy, kèm hướng dẫn chọn loại và lắp đặt.</td>
+          </tr>
+          <tr>
+            <td><strong>Kiến thức / hướng dẫn PCCC</strong> <br>P1</td>
+            <td><strong>pcccphucbaoan</strong></td>
+            <td>Cả nhóm 262 lượt, kiểu bài “thiết bị PCCC gồm những gì”</td>
+            <td>16 URL, khoảng 1 lượt.</td>
+            <td>Viết lại thành câu trả lời thẳng vào câu hỏi, có FAQ và schema. Đây là chỗ AI hay lấy nội dung.</td>
+          </tr>
+          <tr>
+            <td><strong>Vòi / lăng / họng chữa cháy</strong> <br>P1</td>
+            <td><strong>thietbipcccvn</strong></td>
+            <td>Cả nhóm 224 lượt. /voi-lang-chua-chay (190 · 25 từ khóa)</td>
+            <td>9 URL, 19 lượt. Trang lăng phun đang là trang có traffic cao nhất của DHT.</td>
+            <td>Giữ trang này, mở rộng thành danh mục vòi – lăng – họng – cuộn vòi.</td>
+          </tr>
+          <tr>
+            <td><strong>Dịch vụ: thi công, bảo trì, nạp bình</strong> <br>P2–P3</td>
+            <td><strong>Thi công/bảo trì: phucbaoan, thietbipcccvn. Nạp/kiểm định: chưa ai rõ</strong></td>
+            <td>Thi công/bảo trì 93 lượt; nạp/kiểm định 4 lượt (tổng của 4 đối thủ)</td>
+            <td>75 URL, khoảng 22 lượt. Riêng nạp/kiểm định DHT đang có 13 lượt, nhiều hơn cả 4 đối thủ cộng lại.</td>
+            <td>Gộp về 3–4 trang dịch vụ chính, cộng trang khu vực có nội dung thật: dự án đã làm, ảnh, quy trình, bảng giá.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <blockquote class="quote-card">
+      Đọc hết bảng sẽ thấy cùng một kiểu: đối thủ có một trang làm kỹ cho mỗi nhu cầu — bình chữa cháy, đầu báo khói, tiêu lệnh. DHT cũng có nội dung, chỉ là nó bị chia theo tỉnh và theo số điện thoại. Gom lại thành 6 nhóm nhu cầu là cách nhanh nhất để DHT có trang đủ sức vào top 10.
+    </blockquote>
+  </div>
+</section>
+
+<!-- Section 4 -->
+<section class="layer-section bg-soft">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">04 · NẾU GIỮ NGUYÊN CÁCH LÀM</div>
+      <h2>4. Thứ mất đi là khách hỏi mua, chứ không chỉ là thứ hạng</h2>
+    </section>
+
+    <div class="bento-grid">
+      <div class="bento-card danger">
+        <h3>1. Càng viết thêm, website càng loãng</h3>
+        <p>Thêm một trang “giá rẻ tại [tỉnh]” là chia nhỏ thêm một lần. Website càng nhiều trang kiểu này, tỷ lệ trang không có traffic (đang là 93%) càng khó giảm.</p>
+      </div>
+      <div class="bento-card danger">
+        <h3>2. Khách đi mua thiết bị gặp đối thủ trước</h3>
+        <p>Người tìm bình chữa cháy, đầu báo khói, đèn exit đang vào baohovietnam.com và thietbipcccvn.com. Đến lúc cần nạp bình hay bảo trì, có thể họ đã quen một chỗ khác.</p>
+      </div>
+      <div class="bento-card danger">
+        <h3>3. Bỏ ngỏ câu hỏi về Nghị định 105/2025</h3>
+        <p>Riêng bài “Nghị định 105 doanh nghiệp cần làm gì” của pcccphucbaoan.com đã có khoảng 202 lượt. Bên nào trả lời được câu hỏi pháp lý thì có thêm cơ hội được gọi khi khách cần mua sắm và thi công.</p>
+      </div>
+      <div class="bento-card danger">
+        <h3>4. Trang mỏng khó được Google và AI chọn</h3>
+        <p>Trang trùng nhau, trang có số điện thoại trong đường dẫn dễ bị đánh giá thấp. AI Overview, Gemini, ChatGPT sẽ tiếp tục trích bài của bên khác.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5 -->
+<section class="layer-section">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">05 · CHỌN CHỖ ĐỂ LÀM</div>
+      <h2>5. Sáu nhóm nhu cầu, làm lần lượt, không dàn trải</h2>
+    </section>
+    <p>Cách chọn khá đơn giản: đối thủ bán đại trà thì DHT nói cụ thể hơn. Thiết bị đạt kiểm định gì, đúng quy định nào, và DHT có làm luôn phần thi công, nạp, bảo trì hay không.</p>
+
+    <div class="bento-grid">
+      <div class="bento-card success">
+        <h4>Nhóm 1 — Bình chữa cháy</h4>
+        <p><strong>Khách tìm:</strong> bình chữa cháy, bình bột, bình CO2, MT3/MT5, bình có tem kiểm định, giá bình…</p>
+        <p><strong>Vì sao làm trước:</strong> nhóm lớn nhất (khoảng 5.026 lượt của đối thủ), và DHT đã có sẵn 61 URL để gộp.</p>
+        <p><strong>Sẽ làm:</strong> trang danh mục chính, trang con theo loại, bảng so sánh, bảng giá, hướng dẫn chọn bình.</p>
+      </div>
+      <div class="bento-card success">
+        <h4>Nhóm 2 — Báo cháy và thiết bị PCCC</h4>
+        <p><strong>Khách tìm:</strong> đầu báo khói, đèn báo cháy, đèn exit, mặt nạ phòng độc, thiết bị thoát hiểm…</p>
+        <p><strong>Vì sao làm:</strong> đối thủ có khoảng 2.960 lượt ở đây, DHT gần như chưa có mặt (0–1 lượt).</p>
+        <p><strong>Sẽ làm:</strong> trang tổng thiết bị và trang cho từng sản phẩm chính, có thông số, chứng nhận, nơi dùng.</p>
+      </div>
+      <div class="bento-card success">
+        <h4>Nhóm 3 — Pháp lý PCCC cho doanh nghiệp</h4>
+        <p><strong>Khách tìm:</strong> Nghị định 105/2025, tiêu lệnh, nội quy PCCC, hồ sơ kiểm tra, thiết bị bắt buộc…</p>
+        <p><strong>Vì sao làm:</strong> pcccphucbaoan lấy 975 lượt chỉ với vài bài, và đây là những câu được hỏi nhiều trên AI.</p>
+        <p><strong>Sẽ làm:</strong> cụm bài pháp lý, danh sách việc cần kiểm để tải về, dẫn sang bộ tiêu lệnh/nội quy và dịch vụ.</p>
+      </div>
+      <div class="bento-card success">
+        <h4>Nhóm 4 — Thi công, bảo trì, nạp bình</h4>
+        <p><strong>Khách tìm:</strong> thi công PCCC, bảo trì hệ thống PCCC, nạp sạc bình chữa cháy tại Hà Nội và các tỉnh…</p>
+        <p><strong>Vì sao làm:</strong> ít người tìm (khoảng 97 lượt ở đối thủ), nhưng là việc DHT đang làm, đã có 75 URL, và ở mảng nạp/kiểm định DHT đang nhiều lượt hơn đối thủ.</p>
+        <p><strong>Sẽ làm:</strong> 3–4 trang dịch vụ chính và trang khu vực có dự án, ảnh, quy trình, bảng giá thật.</p>
+      </div>
+      <div class="bento-card success">
+        <h4>Nhóm 5 — Vòi, lăng, họng chữa cháy</h4>
+        <p><strong>Khách tìm:</strong> vòi chữa cháy, lăng phun, cuộn vòi, họng tiếp nước…</p>
+        <p><strong>Vì sao làm:</strong> trang lăng phun đang là trang có nhiều lượt nhất của DHT (19 lượt). Giữ và mở rộng từ đây là nhanh nhất.</p>
+        <p><strong>Sẽ làm:</strong> danh mục đầy đủ, nối sang tủ chữa cháy và thi công hệ thống.</p>
+      </div>
+      <div class="bento-card success">
+        <h4>Nhóm 6 — Hiện diện trên AI</h4>
+        <p><strong>Khách hỏi:</strong> những câu dài như “cháy điện dùng bình gì”, “doanh nghiệp cần trang bị PCCC gì”, “bao lâu nạp bình một lần”…</p>
+        <p><strong>Vì sao làm:</strong> đối thủ có 16–51 URL được các công cụ AI nhắc tới, DHT có 3.</p>
+        <p><strong>Sẽ làm:</strong> câu trả lời ngắn, rõ ở đầu bài, FAQ, schema (Product, FAQ, LocalBusiness) và sổ theo dõi DHT được AI nhắc bao nhiêu lần.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6 -->
+<section class="layer-section bg-dark">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">06 · CÁCH LÀM VÀ CÁCH KIỂM</div>
+      <h2>6. Làm thế nào để DHT tự kiểm được dự án</h2>
+    </section>
+
+    <div class="bento-grid">
+      <div class="bento-card">
+        <h3>1. Những gì đã làm trên dữ liệu của DHT</h3>
+        <p>Toàn bộ phần phân tích trong hồ sơ này đã được làm sẵn và mở trong Google Sheet:</p>
+        <ul>
+          <li>Làm sạch 1.435 URL của DHT và 4 đối thủ, bỏ 105 bản ghi trùng, chia thành 9 nhóm chủ đề.</li>
+          <li>Đếm được 231/248 URL của DHT không có traffic, khoảng 42 URL có số điện thoại trong đường dẫn, 34 URL trùng www.</li>
+          <li>Xếp 311 URL cơ hội theo mức ưu tiên P1/P2/P3.</li>
+        </ul>
+      </div>
+
+      <div class="bento-card">
+        <h3>2. Cách làm dựa trên tài liệu công khai</h3>
+        <ul>
+          <li>Hướng dẫn của Google Search Central về nội dung hữu ích, trang mỏng, trang trùng lặp và canonical.</li>
+          <li>Tiêu chí E-E-A-T (kinh nghiệm, chuyên môn, thẩm quyền, độ tin cậy). Nội dung PCCC liên quan trực tiếp đến tính mạng và tài sản nên cần đạt chuẩn này.</li>
+        </ul>
+      </div>
+
+      <div class="bento-card">
+        <h3>3. DHT được xem mẫu trước khi làm</h3>
+        <ul>
+          <li>Bảng xử lý cho cả 248 URL: giữ, gộp, chuyển hướng 301 hay bỏ.</li>
+          <li>Mẫu trang danh mục và trang dịch vụ, có sẵn schema JSON-LD và FAQ.</li>
+          <li>Sổ theo dõi DHT được AI Overview, Gemini, ChatGPT nhắc đến bao nhiêu lần.</li>
+          <li>Bảng số liệu 4 tầng: việc đã làm → lượt hiển thị → lượt truy cập → cuộc gọi, Zalo, form.</li>
+        </ul>
+      </div>
+
+      <div class="bento-card">
+        <h3>4. Thử 90 ngày trước khi mở rộng</h3>
+        <ul>
+          <li>Tháng 1–3 chỉ gộp và làm lại 2 nhóm: bình chữa cháy và pháp lý / Nghị định 105.</li>
+          <li>Xem Google và các công cụ AI phản hồi ra sao rồi mới làm tiếp 4 nhóm còn lại.</li>
+        </ul>
+      </div>
+
+      <div class="bento-card">
+        <h3>5. Bốn bước triển khai</h3>
+        <ul>
+          <li><strong>Tháng 1:</strong> lấy số GA4/GSC làm mốc, kiểm tra kỹ thuật, lập bảng gộp URL.</li>
+          <li><strong>Tháng 2–3:</strong> chuyển hướng, gắn canonical; làm trang chính cho nhóm 1 và nhóm 3.</li>
+          <li><strong>Tháng 4–5:</strong> làm tiếp nhóm 2, 4, 5; chỉnh cách trình bày để AI dễ trích.</li>
+          <li><strong>Tháng 6:</strong> dồn sức vào những trang đem về nhiều cuộc gọi, yêu cầu báo giá nhất.</li>
+        </ul>
+      </div>
+
+      <div class="bento-card">
+        <h3>6. Đo theo 4 tầng</h3>
+        <ul>
+          <li><strong>Việc đã làm:</strong> số trang đã gộp, số bài mới hoặc cập nhật, báo cáo hằng tháng.</li>
+          <li><strong>Hiển thị:</strong> lượt hiển thị và thứ hạng của từ khóa không chứa tên DHT; số lần có mặt trên AI Overview.</li>
+          <li><strong>Truy cập:</strong> lượt truy cập tự nhiên, hướng tới mốc 3.000 lượt/tháng.</li>
+          <li><strong>Kinh doanh:</strong> số lần bấm gọi, nhắn Zalo, gửi form báo giá từ tìm kiếm.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="measure-stair" style="margin-top: 32px;">
+      <div>
+        <span>MỐC T1</span>
+        <b>Có số GA4/GSC thật. Nếu lệch hơn 30% so với số ước tính, chỉnh lại mục tiêu và lộ trình trước khi làm nhanh hơn.</b>
+      </div>
+      <div>
+        <span>MỐC T3</span>
+        <b>Xem lượt hiển thị và lượt nhấp của 2 nhóm thử nghiệm sau khi gộp. Nhóm nào chưa có phản hồi thì dừng, chuyển người và tiền sang nhóm khác.</b>
+      </div>
+      <div>
+        <span>MỐC T5</span>
+        <b>Xem nhóm nào ra nhiều cuộc gọi, Zalo, form nhất. Phần lớn nguồn lực còn lại dồn vào 2 nhóm đó.</b>
+      </div>
+      <div>
+        <span>MỐC T6</span>
+        <b>Nghiệm thu theo mốc traffic đã thống nhất và mức tăng lượt liên hệ từ tìm kiếm.</b>
+      </div>
+    </div>
+
+    <blockquote class="quote-card">
+      Ở các mốc tháng 1, 3 và 5, nếu số liệu cho thấy một hướng không hiệu quả thì không bỏ thêm tiền vào hướng đó. DHT luôn biết tiền đang đi đâu và có quyền đổi hướng.
+    </blockquote>
+  </div>
+</section>
+
+<!-- Section 7 -->
+<section class="layer-section bg-soft">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">07 · CHI PHÍ VÀ PHẠM VI</div>
+      <h2>7. Tiền mỗi tháng trả cho những việc gì</h2>
+    </section>
+    <p>DHT trả cho một hệ thống có số liệu theo dõi hằng tháng và có thể đổi hướng giữa chừng. Hợp đồng không tính theo số bài.</p>
+
+    <div class="bento-grid bento-grid-4 metric-grid">
+      <div class="bento-card"><b>30M</b><span>Mức đầu tư mỗi tháng. 6 tháng = 180 triệu</span></div>
+      <div class="bento-card"><b>248</b><span>URL hiện có được rà và xếp vào: giữ, gộp, 301</span></div>
+      <div class="bento-card"><b>06</b><span>nhóm nhu cầu chọn từ dữ liệu đối thủ</span></div>
+      <div class="bento-card"><b>≥5</b><span>khối nội dung mỗi tháng (trang mới, trang gộp, bài cập nhật)</span></div>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Hạng mục</th>
+            <th>DHT nhận được</th>
+            <th>Để làm gì</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Dọn kỹ thuật</strong></td>
+            <td>Thống nhất www/không www, gắn canonical, chuyển hướng 301 cho URL có số điện thoại và trang trùng, làm lại sitemap.</td>
+            <td>Sức mạnh dồn về trang chính, Google lập chỉ mục đúng trang.</td>
+          </tr>
+          <tr>
+            <td><strong>Giữ cái đang có</strong></td>
+            <td>Theo dõi 17 URL đang có traffic: lăng phun, nạp bình, bảo trì, bình bột 4kg…</td>
+            <td>Lúc gộp trang không làm mất phần traffic đang có.</td>
+          </tr>
+          <tr>
+            <td><strong>Làm 6 nhóm nhu cầu</strong></td>
+            <td>Trang danh mục và trang dịch vụ chính cho từng nhóm.</td>
+            <td>Có thêm lối vào ở đúng chỗ khách đang tìm.</td>
+          </tr>
+          <tr>
+            <td><strong>Viết nội dung</strong></td>
+            <td>Ít nhất 5 khối nội dung mỗi tháng: trang danh mục, trang dịch vụ, bài pháp lý, FAQ.</td>
+            <td>Thông tin kỹ thuật và quy định PCCC được viết đúng.</td>
+          </tr>
+          <tr>
+            <td><strong>Làm cho khách liên hệ</strong></td>
+            <td>Nút gọi, Zalo, form báo giá đặt theo nội dung từng trang; mỗi trang một số hotline.</td>
+            <td>Người đọc xong có sẵn đường để gọi hoặc hỏi giá.</td>
+          </tr>
+          <tr>
+            <td><strong>Theo dõi trên AI</strong></td>
+            <td>Theo dõi DHT trên AI Overview, Gemini, ChatGPT; chỉnh cách trình bày bài cho dễ trích.</td>
+            <td>Khi khách hỏi AI về PCCC, DHT có cơ hội được nhắc tên.</td>
+          </tr>
+          <tr>
+            <td><strong>Đo và báo cáo</strong></td>
+            <td>Bảng số liệu traffic, hiển thị, cuộc gọi, Zalo, form; báo cáo hằng tháng.</td>
+            <td>Biết khoản chi nào đang ra kết quả.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <blockquote class="quote-card">
+      Thứ DHT giữ trong tay là số liệu từng tháng và quyền dời nguồn lực sang chỗ đang có kết quả.
+    </blockquote>
+  </div>
+</section>
+
+<!-- Section 8 -->
+<section class="layer-section">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">08 · LỘ TRÌNH VÀ CÁC MỐC</div>
+      <h2>8. Nhìn vào đâu để biết dự án đang đi đúng</h2>
+    </section>
+    <p>Hết mỗi giai đoạn phải có một con số mới, để Ban Giám đốc DHT chọn: giữ hướng, làm nhanh hơn hay dời nguồn lực sang chỗ khác.</p>
+
+    <div class="bento-grid bento-grid-4 roadmap">
+      <div class="bento-card">
+        <small>THÁNG 1–2</small>
+        <b>LẤY MỐC & DỌN NỀN</b>
+        <span>Lấy số GA4/GSC làm mốc, kiểm tra kỹ thuật, lập bảng gộp 248 URL, làm 301 và canonical.</span>
+      </div>
+      <div class="bento-card">
+        <small>THÁNG 3–4</small>
+        <b>LÀM CÁC TRANG CHÍNH</b>
+        <span>Bình chữa cháy, pháp lý Nghị định 105, báo cháy và thiết bị PCCC; gắn nút gọi, Zalo, form.</span>
+      </div>
+      <div class="bento-card">
+        <small>THÁNG 5–6</small>
+        <b>DỒN SỨC VÀO CHỖ RA KẾT QUẢ</b>
+        <span>Làm tiếp các trang thi công, bảo trì, nạp bình; chỉnh cho AI dễ trích; tập trung vào nhóm ra nhiều liên hệ nhất.</span>
+      </div>
+      <div class="bento-card">
+        <small>XEM LẠI ĐỊNH KỲ</small>
+        <b>THÁNG 1 / 3 / 5 / 6</b>
+        <span>Nhìn số thật rồi quyết định mở rộng, giữ nguyên hay làm lại.</span>
+      </div>
+    </div>
+
+    <div class="measure-stair">
+      <div>
+        <span>THÁNG 1</span>
+        <b>Số thật có ủng hộ mục tiêu 3.000 lượt/tháng không? Dấu hiệu: đã chốt xong bảng gộp URL và thứ tự ưu tiên.</b>
+      </div>
+      <div>
+        <span>THÁNG 3</span>
+        <b>Google đã phản hồi việc gộp trang chưa? Dấu hiệu: lượt hiển thị và lượt nhấp tăng ở nhóm bình chữa cháy và pháp lý.</b>
+      </div>
+      <div>
+        <span>THÁNG 5</span>
+        <b>Đã đủ cơ sở để dồn sức chưa? Dấu hiệu: cuộc gọi, Zalo, form từ tìm kiếm tăng rõ.</b>
+      </div>
+      <div>
+        <span>THÁNG 6</span>
+        <b>Khoản đầu tư mang lại gì? Dấu hiệu: traffic và lượt liên hệ đạt mốc hai bên đã thống nhất.</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 9 -->
+<section class="layer-section bg-dark">
+  <div class="shell">
+    <section class="section-head">
+      <div class="kicker">09 · HỢP TÁC VÀ BƯỚC TIẾP THEO</div>
+      <h2>9. Năm điều cần chốt trước khi bắt đầu</h2>
+    </section>
+
+    <div class="bento-grid">
+      <div class="bento-card">
+        <h3>Cần chốt trước khi ký</h3>
+        <ol>
+          <li><strong>Mục tiêu 3.000 lượt/tháng.</strong> Lấy theo mức của thietbipcccvn.com, website có số trang tương đương. Con số này sẽ chốt lại sau khi có số GA4/GSC ở tháng 1.</li>
+          <li><strong>Đồng ý gộp trang.</strong> DHT cho phép gộp và chuyển hướng 301 các trang “giá rẻ tại [tỉnh]” và các URL có số điện thoại.</li>
+          <li><strong>Tháng 1 để kiểm nền.</strong> Xác nhận số liệu và lộ trình trước khi đẩy nhanh việc viết.</li>
+          <li><strong>Xem lại ở tháng 1 / 3 / 5 / 6.</strong> Dời nguồn lực theo số liệu thật.</li>
+          <li><strong>Phối hợp.</strong> DHT duyệt nội dung kỹ thuật và giá trong 3–5 ngày; cấp quyền GA4, GSC và quản trị website.</li>
+        </ol>
+      </div>
+
+      <div class="bento-card">
+        <h3>Ai làm gì</h3>
+        <ul>
+          <li><strong>Vinalink Media:</strong> nghiên cứu, lên kế hoạch, lập bảng gộp URL, viết nội dung, rà trải nghiệm và các nút liên hệ, đo và báo cáo hằng tháng.</li>
+          <li><strong>PCCC DHT:</strong> cấp quyền GA4, GSC, website; gửi thông số, chứng nhận kiểm định, ảnh dự án, bảng giá; duyệt nội dung kỹ thuật và pháp lý.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-kicker">ĐỀ XUẤT TRỌN GÓI</div>
+      <div class="offer-title">TĂNG TRƯỞNG TRÊN GOOGLE & AI SEARCH</div>
+      <div class="offer-price">30.000.000 VNĐ / THÁNG</div>
+      <p style="margin-top: 24px; color: rgba(255,255,255,0.85); max-width: 750px; margin-left: auto; margin-right: auto;">
+        <strong>Thời gian:</strong> 6 tháng (tổng ngân sách: 180.000.000 VNĐ).<br>
+        <strong>Bước tiếp theo:</strong> một buổi trao đổi 30–45 phút giữa PCCC DHT và Vinalink Media để chốt 5 điều trên và chọn ngày bắt đầu.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="shell footer-inner">
+    <span><strong>PCCC DHT VIỆT NAM</strong> · GOOGLE SEARCH & AI SEARCH</span>
+    <span>Vinalink Media biên soạn & thiết kế</span>
+  </div>
+</footer>
+
+</body>
+</html>
